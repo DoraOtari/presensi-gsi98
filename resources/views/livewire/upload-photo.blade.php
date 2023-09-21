@@ -1,5 +1,3 @@
-@extends('tema')
-@section('konten')
 <div class="col-lg-4 mx-auto"> 
     <div class="card">
         <div class="card-body">
@@ -23,4 +21,3 @@
         </div>
     </div>
 </div>
-@endsection

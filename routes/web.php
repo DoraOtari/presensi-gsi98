@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\UploadPhoto;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/upload',function(){
-    return view('upload_foto');
-});
+Route::get('/upload', UploadPhoto::class);

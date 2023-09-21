@@ -6,7 +6,8 @@
     <title>Aplikasi Setiawan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-</head>
+  @livewireStyles
+  </head>
   <body>
     <nav class="navbar bg-white navbar-expand-lg">
       <div class="container-fluid">
@@ -43,17 +44,22 @@
                 </ul>
               </li>
             </ul>
-            <form class="d-flex mt-3" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+            <div>
+              <form action="{{ route('logout') }}" method="post">
+                @csrf
+                <button type="submit" class="">
+                  <i class="bi-power"></i>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </nav>
     <main>
-        @yield('konten')
+        {{ $slot }}
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  @livewireScripts
   </body>
 </html>

@@ -1,4 +1,4 @@
 @extends('tema')
 @section('konten')
 
-  @endsection
+@endsection
