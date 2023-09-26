@@ -7,11 +7,18 @@
             </h4>
             <p class="card-text">silahkan upload foto profil anda</p>
             <hr>
-            <form action="" method="post">
+            @if($foto)
+                <p>Foto Preview:</p> 
+                <img style="aspect-ratio:1/1; width:150px" class="img-thumbnail rounded-circle d-block mx-auto" src="{{ $foto->temporaryUrl() }}" alt="">
+            @endif
+            <form wire:submit.prevent='simpan' method="post">
                 @csrf
                 <div class="mb-3">
                   <label for="" class="form-label">Choose file</label>
-                  <input type="file" class="form-control" name="foto_profil" id="" placeholder="" aria-describedby="fileHelpId">
+                  <input accept="image/*" wire:model='foto' type="file" class="form-control @error('foto') is-invalid @enderror" name="foto_profil" >
+                  @error('foto')
+                      <small class="text-danger">{{ $message }}</small>
+                  @enderror
                 </div>
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-upload"></i>
