@@ -23,12 +23,15 @@
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-start align-items-center flex-grow-1 pe-3">
+            <ul class="navbar-nav nav-underline justify-content-start align-items-center flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link {{ Request::is('dashboard') ? 'active' : ''  }}"  href="{{ url('/dashboard') }}"><i class="bi-house"></i> Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link {{ Request::is('upload') ? 'active' : ''  }}" href="{{ url('/upload') }}"><i class="bi-person-bounding-box"></i> Profil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('jabatan/tampil') ? 'active' : ''  }}" href="{{ url('/jabatan/tampil') }}"><i class="bi-diagram-2"></i> Jabatan</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
