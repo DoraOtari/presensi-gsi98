@@ -56,6 +56,10 @@
         </div>
       </div>
     </nav>
+    <section id="profil" class="container d-flex align-items-center">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" style="width: 45px; aspect-ratio:1/1" class="rounded-circle">
+      <h4 class="lead ms-2 text-capitalize">{{ Auth::user()->name ?? 'Guest' }}</h4>
+    </section>
     <main>
         {{ $slot }}
     </main>
