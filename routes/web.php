@@ -32,3 +32,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 Route::get('/upload', UploadPhoto::class);
+Route::get('/jabatan/tampil', function(){
+    return view('jabatan.tampil');
+});
