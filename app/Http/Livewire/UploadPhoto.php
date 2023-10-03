@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -22,7 +23,13 @@ class UploadPhoto extends Component
 
     public function simpan()
     {
-        # code...
+        $foto = $this->foto->store('Avatars'); //simpan file foto di folder avatars
+
+        User::where('id', auth()->user()->id)->update([
+            'foto_profil' => $foto,
+        ]); // masukan nama foto ke tabel user
+
+        session()->flash('pesan', 'Berhasil Upload Foto Provil'); // mengirim pesan jika berhasil upload
     }
 
     public function render()
