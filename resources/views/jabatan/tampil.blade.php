@@ -6,14 +6,14 @@
                     <h4 class="card-title">
                        <i class="bi-file-person"></i> Data Jabatan
                     </h4>
-                    <a href="{{ url('jabatan/buat') }}" class="btn btn-warning">
+                    <a href="{{ url('jabatan/buat') }}" class="btn btn-dark">
                         <i class="bi-plus"></i> Buat
                     </a>
                 </div>
                 <hr>
                 <div class="table-responsive">
                     <table class="table">
-                        <thead class="table-info">
+                        <thead class="table-dark">
                             <tr>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Status</th>
