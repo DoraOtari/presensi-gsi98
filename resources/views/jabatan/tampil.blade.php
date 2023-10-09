@@ -1,5 +1,12 @@
 <x-app-layout>
     <div class="col-lg-6 mx-auto">
+
+        @if (session('pesan'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <strong><i class="bi-bell"></i></strong> {{ session('pesan') }}
+            </div>
+        @endif 
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between">

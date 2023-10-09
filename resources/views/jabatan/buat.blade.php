@@ -5,6 +5,7 @@
                 <h4 class="card-title"><i class="bi-plus"></i> Buat Jabatan</h4>
                 <hr>
                 <form action="{{ url('/jabatan') }}" method="post">
+                    @csrf
                     <div class="mb-3">
                       <label class="form-label">Nama</label>
                       <input type="text" class="form-control" name="nama" placeholder="masukan nama jabatan">
@@ -21,7 +22,7 @@
                             <option value="kontrak">Kontrak</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-dark">
+                    <button type="submit" class="btn btn-dark float-end">
                         <i class="bi-send"></i> Submit
                     </button>
                 </form>

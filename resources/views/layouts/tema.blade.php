@@ -31,7 +31,7 @@
                 <a class="nav-link {{ Request::is('upload') ? 'active' : ''  }}" href="{{ url('/upload') }}"><i class="bi-person-bounding-box"></i> Profil</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ Request::is('jabatan/tampil') ? 'active' : ''  }}" href="{{ url('/jabatan/tampil') }}"><i class="bi-diagram-2"></i> Jabatan</a>
+                <a class="nav-link {{ Request::is('jabatan*') ? 'active' : ''  }}" href="{{ url('/jabatan/tampil') }}"><i class="bi-diagram-2"></i> Jabatan</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
