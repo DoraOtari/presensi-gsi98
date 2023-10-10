@@ -28,4 +28,17 @@ class JabatanController extends Controller
        //perintah untuk mengarahkan ke halaman lain beserta notifikasi pesan
        return redirect('jabatan/tampil')->with('pesan', 'Berhasil simpan data jabatan');
     }
+
+    public function hapus($id)
+    {
+        DB::table('jabatan')->where('id', $id)->delete();
+
+        return redirect('/jabatan/tampil')->with('pesan', 'Berhasil hapus data');
+    }
+
+    public function ubah($id)
+    {
+        $jabatan = DB::table('jabatan')->find($id);
+        return view('jabatan.ubah', compact('jabatan'));
+    }
 }

@@ -19,7 +19,7 @@
                 <hr>
                 <div class="table-responsive">
                     <table class="table">
-                        <thead class="table-dark">
+                        <thead class="table-secondary">
                             <tr>
                                 <th>No.</th>
                                 <th>Nama</th>
@@ -35,15 +35,17 @@
                                     <td scope="row">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
                                     <td>{{ $item->status }}</td>
-                                    <td>{{ $item->gaji }}</td>
+                                    <td>Rp. {{ number_format($item->gaji,2,',','.')  }}</td>
                                     <td>
-                                        <a href="" class="btn btn-success rounded-circle">
+                                        <a href="{{ route('ubah jabatan', $item->id) }}" class="btn btn-sm btn-success rounded-circle">
                                             <i class="bi-pen"></i>
                                         </a>
                                     </td>
                                     <td>
-                                        <form action="" method="post">
-                                            <button type="submit" class="btn btn-danger rounded-circle">
+                                        <form action="{{ route('hapus jabatan', $item->id) }}" method="post">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-danger rounded-circle">
                                                 <i class="bi-trash"></i>
                                             </button>
                                         </form>

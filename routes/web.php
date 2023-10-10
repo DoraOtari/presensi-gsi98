@@ -39,5 +39,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/jabatan/tampil', 'tampil');
         Route::get('/jabatan/buat', 'buat');
         Route::post('/jabatan', 'simpan');
+        Route::delete('/jabatan/{id}', 'hapus')->name('hapus jabatan');
+        Route::get('/jabatan/{id}/ubah', 'ubah')->name('ubah jabatan');
     });
 });
