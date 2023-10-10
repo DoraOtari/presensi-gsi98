@@ -8,7 +8,8 @@ class JabatanController extends Controller
 {
     public function tampil()
     {
-        return view('jabatan.tampil');
+        $jabatan = DB::table('jabatan')->get(); //perintah ambil semua data di database
+        return view('jabatan.tampil', compact('jabatan'));
     }
 
     public function buat()
