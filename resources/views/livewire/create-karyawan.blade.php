@@ -6,7 +6,7 @@
         <form action="{{ url('/karyawan') }}" method="post">
             <div class="mb-3">
               <label class="form-label badge bg-primary">NIK Otomatis</label>
-              <input type="text" class="form-control form-control-plaintext" name="nik" >
+              <input  type="text" readonly class="form-control-plaintext" name="nik" >
             </div>
 
             <div class="mb-3">

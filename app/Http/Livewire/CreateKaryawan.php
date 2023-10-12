@@ -6,16 +6,8 @@ use Livewire\Component;
 use App\Models\Jabatan;
 class CreateKaryawan extends Component
 {
-    public $jabatan;
-
-    public function mount(Jabatan $jabatan)
-    {
-        $this->jabatan = $jabatan;
-        dd($this->jabatan);
-    }
-
     public function render()
     {
-        return view('livewire.create-karyawan');
+        return view('livewire.create-karyawan', ['jabatan' => Jabatan::all()]);
     }
 }

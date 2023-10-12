@@ -26,7 +26,7 @@
                       <small class="text-danger">{{ $message }}</small>
                   @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button wire:loading.attr='disabled' type="submit" class="btn btn-primary">
                     <i class="bi bi-upload"></i>
                     Submit
                 </button>
