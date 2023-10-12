@@ -4,7 +4,7 @@
             <div class="card-body">
                 <h4 class="card-title"><i class="bi-pen"></i> Ubah Jabatan</h4>
                 <hr>
-                <form action="{{ url('/jabatan') }}" method="post">
+                <form action="{{ route('update jabatan', $jabatan->id) }}" method="post">
                     @csrf
                     @method('put')
                     <div class="mb-3">

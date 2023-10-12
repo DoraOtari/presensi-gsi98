@@ -41,4 +41,16 @@ class JabatanController extends Controller
         $jabatan = DB::table('jabatan')->find($id);
         return view('jabatan.ubah', compact('jabatan'));
     }
+
+    public function update(Request $request, $id)
+    {
+        DB::table('jabatan')->where('id', $id)->update([
+            'nama' => $request->nama,
+            'gaji' => $request->gaji,
+            'status' => $request->status,
+        ]); //kode update data di tabel jabatan
+
+        return redirect('/jabatan/tampil')
+                ->with('pesan', ' Berhasil ubah data'); //kode untuk mengalihkan ke halaman tampil disertai pesan
+    }
 }

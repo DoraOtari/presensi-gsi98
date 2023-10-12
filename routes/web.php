@@ -41,5 +41,6 @@ Route::middleware('auth')->group(function(){
         Route::post('/jabatan', 'simpan');
         Route::delete('/jabatan/{id}', 'hapus')->name('hapus jabatan');
         Route::get('/jabatan/{id}/ubah', 'ubah')->name('ubah jabatan');
+        Route::put('/jabatan/{id}', 'update')->name('update jabatan');
     });
 });
