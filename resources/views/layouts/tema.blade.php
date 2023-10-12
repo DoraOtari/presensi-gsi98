@@ -33,18 +33,8 @@
               <li class="nav-item">
                 <a class="nav-link {{ Request::is('jabatan*') ? 'active' : ''  }}" href="{{ url('/jabatan/tampil') }}"><i class="bi-diagram-2"></i> Jabatan</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li>
-                    <hr class="dropdown-divider">
-                  </li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('karyawan*') ? 'active' : ''  }}" href="{{ url('/karyawan') }}"><i class="bi-people"></i> Karyawan</a>
               </li>
             </ul>
             <div>

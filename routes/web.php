@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Livewire\CreateKaryawan;
 use App\Http\Livewire\UploadPhoto;
 use Illuminate\Support\Facades\Route;
 
@@ -43,4 +45,8 @@ Route::middleware('auth')->group(function(){
         Route::get('/jabatan/{id}/ubah', 'ubah')->name('ubah jabatan');
         Route::put('/jabatan/{id}', 'update')->name('update jabatan');
     });
+
+   Route::resource('/karyawan', KaryawanController::class);
+   
+    Route::get('/karyawan/create', CreateKaryawan::class);
 });
