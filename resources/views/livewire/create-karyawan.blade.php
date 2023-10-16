@@ -1,13 +1,13 @@
 <div class="col-lg-8 mt-3 mx-auto">
-  <div class="card">
-   <div class="card-body">
-       <h4><i class="bi-person-plus"></i> Create Karyawan</h4>
-       <hr>
-       <form action="{{ url('/karyawan') }}" method="post">
-           <div class="mb-3">
-             <label class="form-label badge bg-primary">NIK Otomatis</label>
-             <input value="{{ $nik }}"  type="text" readonly class="form-control-plaintext" name="nik" >
-           </div>
+   <div class="card">
+    <div class="card-body">
+        <h4><i class="bi-person-plus"></i> Create Karyawan</h4>
+        <hr>
+        <form action="{{ url('/karyawan') }}" method="post">
+            <div class="mb-3">
+              <label class="form-label badge bg-primary">NIK Otomatis</label>
+              <input type="text" class="form-control form-control-plaintext" name="nik" >
+            </div>
 
            <div class="mb-3">
              <label class="form-label">Nama</label>
