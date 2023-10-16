@@ -37,22 +37,31 @@
                 <a class="nav-link {{ Request::is('karyawan*') ? 'active' : ''  }}" href="{{ url('/karyawan') }}"><i class="bi-people"></i> Karyawan</a>
               </li>
             </ul>
-            <div>
-              <form action="{{ route('logout') }}" method="post">
-                @csrf
-                <button type="submit" class="btn btn-danger rounded-circle">
-                  <i class="bi-power"></i>
-                </button>
-              </form>
+            <div class="me-3">
+              <div class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{ asset('storage/'.Auth::user()->foto_profil) ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' }}" style="width: 30px; aspect-ratio:1/1" class="rounded-circle">
+                    <h4 class="lead ms-2 text-capitalize d-inline">{{ Auth::user()->name ?? 'Guest' }} </h4>
+                </a>
+                <ul class="dropdown-menu mt-2">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="btn border-0">
+                          <i class="bi-power"></i> Logout
+                        </button>
+                      </form>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </nav>
-    <section id="profil" class="container d-flex align-items-center">
-      <img src="{{ asset('storage/'.Auth::user()->foto_profil) ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png' }}" style="width: 45px; aspect-ratio:1/1" class="rounded-circle">
-      <h4 class="lead ms-2 text-capitalize">{{ Auth::user()->name ?? 'Guest' }}</h4>
-    </section>
+    
     <main>
         {{ $slot }}
     </main>
