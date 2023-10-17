@@ -4,6 +4,7 @@
         <h4><i class="bi-person-plus"></i> Create Karyawan</h4>
         <hr>
         <form action="{{ url('/karyawan') }}" method="post">
+            @csrf
             <div class="mb-3">
               <label class="form-label badge bg-primary">NIK Otomatis</label>
               <input readonly value="{{ $nik }}" type="text" class=" form-control-plaintext" name="nik" >
@@ -12,6 +13,15 @@
            <div class="mb-3">
              <label class="form-label">Nama</label>
              <input type="text" class="form-control" name="nama" placeholder="masukan nama karyawan">
+           </div>
+
+           <div class="mb-3">
+            <label for="kelamin" class="form-label">Jenis Kelamin</label>
+            <select class="form-select " name="kelamin" id="kelamin">
+                <option selected>--pilih satu--</option>
+                <option value="L">Laki-laki</option>
+                <option value="P">Perempuan</option>
+            </select>
            </div>
 
            <div class="mb-3">
@@ -76,7 +86,7 @@
            {{-- akhir baris 2 --}}
            <div class="mb-3">
              <label for="alamat" class="form-label">Alamat</label>
-             <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+             <textarea class="form-control" name="alamat" id="alamat" placeholder="masukan alamat karyawan" rows="3"></textarea>
            </div>
            <button type="submit" class="btn btn-primary float-end">Submit</button>
        </form>
