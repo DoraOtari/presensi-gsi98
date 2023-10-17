@@ -6,7 +6,7 @@
         <form action="{{ url('/karyawan') }}" method="post">
             <div class="mb-3">
               <label class="form-label badge bg-primary">NIK Otomatis</label>
-              <input type="text" class="form-control form-control-plaintext" name="nik" >
+              <input readonly value="{{ $nik }}" type="text" class=" form-control-plaintext" name="nik" >
             </div>
 
            <div class="mb-3">
@@ -52,10 +52,10 @@
             <div class="col-6">
                 <div id="pilih provinsi" class="mb-3">
                     <label  class="form-label">Provinsi</label>
-                    <select class="form-select" name="provinsi" >
-                        <option selected disabled>--pilih satu--</option>
+                    <select wire:change='kota' wire:model="provinsi_id" class="form-select" name="provinsi" >
+                        <option selected disabled value="null">--pilih satu--</option>
                         @foreach ($provinsi as $item)
-                        <option value="{{ $item['id'] }}">{{ $item['name'] }}</option>
+                        <option value="{{ $item['id'].'/'.$item['name'] }}">{{ $item['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -66,14 +66,19 @@
                     <label  class="form-label">Kota</label>
                     <select class="form-select" name="kota" >
                         <option selected disabled>--pilih satu--</option>
-                        @foreach ($jabatan as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                        @foreach ($kota as $item)
+                        <option value="{{ $item['id'].'/'.$item['name'] }}">{{ $item['name'] }}</option>
                         @endforeach
                     </select>
                 </div>
             </div>
            </div>
            {{-- akhir baris 2 --}}
+           <div class="mb-3">
+             <label for="alamat" class="form-label">Alamat</label>
+             <textarea class="form-control" name="alamat" id="alamat" rows="3"></textarea>
+           </div>
+           <button type="submit" class="btn btn-primary float-end">Submit</button>
        </form>
    </div>
   </div>
