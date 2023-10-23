@@ -26,7 +26,7 @@
 
            <div class="mb-3">
              <label class="form-label">Tanggal Bekerja</label>
-             <input wire:model="tgl" type="date" class="form-control" name="tgl_mulai_kerja" >
+             <input wire:model="tgl" type="date" class="form-control" name="tgl_mulai_bekerja" >
            </div>
            {{-- 1 baris 2 kolom --}}
            <div class="row">

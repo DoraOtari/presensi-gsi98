@@ -10,7 +10,7 @@ class KaryawanController extends Controller
 
     public function index()
     {
-        return view('karyawan.index');
+        return view('karyawan.index', ['karyawan' => Karyawan::with('jabatan','user')->get()]);
     }
 
     public function create()
@@ -27,7 +27,7 @@ class KaryawanController extends Controller
             'nik' => $request->nik,
             'nama' => $request->nama,
             'kelamin' => $request->kelamin,
-            'tgl_mulai_kerja' => $request->tgl_mulai_kerja,
+            'tgl_mulai_bekerja' => $request->tgl_mulai_bekerja,
             'provinsi' => $request->provinsi,
             'kota' => $request->kota,
             'alamat' => $request->alamat,
