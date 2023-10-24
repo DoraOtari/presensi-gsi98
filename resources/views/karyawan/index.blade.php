@@ -1,9 +1,18 @@
 @push('styleku')
     <style>
-        img {
+        img#foto_karyawan {
             width: 30px;
             border-radius: 50%;
             aspect-ratio: 1/1
+        }
+
+        #bingkaiFoto{
+            height: 300px;
+            overflow: hidden;
+        }
+
+        #detailFoto {
+            margin-top: -25%;
         }
     </style>
 @endpush
@@ -23,7 +32,7 @@
                 </a>
             </div>
             <ul class="list-group">
-                @forelse ($karyawan as $item)
+                @forelse ($karyawan as $key => $item)
                     <li class="list-group-item d-flex justify-content-between mb-2 border">
                         <div id="data karyawan">
                             @if ($item->user->foto_profil)
@@ -36,7 +45,10 @@
                             <div class="small ms-4 ps-2"><i class="bi-envelope-at"></i> {{ $item->user->email }}</div>
                         </div>
                         <div id="tombol aksi">
-                            <i class="bi-eye fs-5 text-warning"></i>
+                            <button type="button" class="btn px-0 mb-2 border-0" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $key }}">
+                                <i class="bi-eye fs-5 text-warning"></i>
+                            </button>
+                            @include('karyawan.detail')
                             <div class="vr mx-2"></div>
                             <i class="bi-pen fs-5 text-success"></i>
                             <div class="vr mx-2"></div>
