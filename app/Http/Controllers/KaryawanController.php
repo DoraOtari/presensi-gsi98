@@ -52,8 +52,10 @@ class KaryawanController extends Controller
         //
     }
 
-    public function destroy($id)
+    public function destroy(Karyawan $karyawan)
     {
-        //
+        Karyawan::destroy($karyawan->id); //kode hapus data di tabel karyawan
+        return redirect()->back()->with('pesan','Berhasil hapus karyawan '.$karyawan->nama);
+
     }
 }

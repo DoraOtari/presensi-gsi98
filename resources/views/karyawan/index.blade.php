@@ -26,7 +26,11 @@
                 @forelse ($karyawan as $item)
                     <li class="list-group-item d-flex justify-content-between mb-2 border">
                         <div id="data karyawan">
-                            <img id="foto_karyawan" src="{{ asset('profile.gif') }}">
+                            @if ($item->user->foto_profil)
+                                <img id="foto_karyawan" src="{{ asset('storage/'.$item->user->foto_profil) }}">
+                            @else
+                                <img id="foto_karyawan" src="{{ asset('profile.gif') }}">
+                            @endif
                             <h6 class="d-inline text-capitalize">{{ $item->nama }}</h6>
                             <span class="badge bg-info-subtle rounded-pill text-info">{{ $item->jabatan->nama }}</span>
                             <div class="small ms-4 ps-2"><i class="bi-envelope-at"></i> {{ $item->user->email }}</div>
@@ -40,7 +44,7 @@
                                 @csrf
                                 @method("delete")
                                 <button type="submit" class="btn border-0 p-0">
-                                    <i class="bi-trash2 fs-5 text-danger"></i>
+                                    <i id="iconHapus"  class="bi-trash2 fs-5 text-danger"></i>
                                 </button>
                             </form>
                         </div>
