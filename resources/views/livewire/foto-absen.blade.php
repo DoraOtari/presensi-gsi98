@@ -1,5 +1,10 @@
 <div>
-    <h1 class="my-3 fontku text-uppercase"><i class="bi-webcam"></i> Presensi App</h1>
+    <section class="d-flex justify-content-between align-items-center">
+        <h1 class="my-3 fontku text-uppercase"><i class="bi-webcam"></i> Presensi App</h1>
+        <span>
+            <a href="{{ route('login') }}" class="btn btn-light shadow-sm border"><i class="bi-lock h3"></i></a>
+        </span>
+    </section>
     <h3 class="lead">Preview Foto</h3>
     <div class="mb-3 text-center">
         <div wire:loading wire:target="foto" class="text-center h-3">Uploading...</div>
