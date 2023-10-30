@@ -1,7 +1,7 @@
 <x-app-layout>
         <div class="card col-lg-11 mx-auto shadow">
             <div class="card-body row">
-                <h3>Performa Anda</h3>
+                <h3>Kinerja Anda Bulan ini</h3>
                 <div class="col-lg-7 col-12">
                     <canvas id="myChart"></canvas>
                 </div>
@@ -43,6 +43,8 @@
 {{-- ============================================================================= --}}
     @push('scriptku')
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+    
     <script>
         const ctx = document.getElementById('myChart');
       
@@ -62,7 +64,25 @@
               y: {
                 beginAtZero: false
               }
-            }
+            },
+            plugins: {
+    annotation: {
+      annotations: {
+        line1: {
+          type: 'line',
+          yMin: 8,
+          yMax: 8,
+          borderColor: 'red',
+          borderWidth: 2,
+          label : {
+            backgroundColor: 'red',
+            content: 'Jam Masuk 08:00',
+            display: true
+          }
+        }
+      }
+    }
+  }
           }
         });
       </script>
