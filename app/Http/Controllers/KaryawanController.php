@@ -13,7 +13,7 @@ class KaryawanController extends Controller
         return view('karyawan.index', ['karyawan' => Karyawan::with('jabatan','user')->get()]);
     }
 
-    public function create()
+    public function absen(Request $request)
     {
         //
     }
