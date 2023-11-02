@@ -46,7 +46,9 @@ Route::middleware('auth')->group(function(){
         Route::put('/jabatan/{id}', 'update')->name('update jabatan');
     });
 
-   Route::resource('/karyawan', KaryawanController::class);
+    Route::get('/karyawan/performa', [KaryawanController::class, 'performa']);
+    
+    Route::resource('/karyawan', KaryawanController::class);
    
     Route::get('/karyawan/create', CreateKaryawan::class);
     Route::post('absen', [KaryawanController::class, 'absen']);

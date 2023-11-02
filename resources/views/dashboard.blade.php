@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="row justify-content-center mt-lg-3">
+    <div class="row justify-content-center mt-lg-3 mx-1">
         {{-- kolom pertama --}}
         <div class="col-lg-6">
             <h2><i class="bi bi-webcam"></i> PRESENSI APP</h2>
@@ -9,7 +9,7 @@
                 Monitoring performa kehadiran anda di aplikasi ini, pantau kehadiran mu semudah memantau
                 <i class="bi-instagram text-danger"></i> IG Mantanmu
             </h5>
-            <a href="{{ url('performa') }}" class="btn btn-primary bg-gradient rounded-pill mt-2">
+            <a href="{{ url('/karyawan/performa') }}" class="btn btn-primary bg-gradient rounded-pill mt-2">
                 <i class="bi-bar-chart"></i> Performa
             </a>
         </div>
